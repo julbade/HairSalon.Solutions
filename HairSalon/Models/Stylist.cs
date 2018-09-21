@@ -79,8 +79,7 @@ namespace HairSalon.Models
       name.ParameterName = "@StylistName";
       name.Value = this._name;
       cmd.Parameters.Add(name);
-      // // more logic will go here
-      //
+
       cmd.ExecuteNonQuery();
       _id = (int) cmd.LastInsertedId;
       //
