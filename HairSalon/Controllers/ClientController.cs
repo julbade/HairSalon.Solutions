@@ -25,17 +25,5 @@ namespace HairSalon.Controllers
       model.Add("stylist", stylist);
       return View(client);
     }
-
-    //
-    // [HttpPost("stylists/{stylistId}/clients")]
-    // public ActionResult Create()
-    // {
-    //   Client newClient = new Client(Request.Form["new-client"], int.Parse(Request.Form["stylistId"]));
-    //   newClient.Save();
-    //   List<Client> allClients = Client.GetAll();
-    //   return RedirectToAction("Details");
-    // }
-
-
  }
 }
