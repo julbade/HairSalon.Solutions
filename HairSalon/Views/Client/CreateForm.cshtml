@@ -2,5 +2,6 @@
 <form action="/clients" method="post">
   <label for="new-client">Add a client</label>
   <input id="new-client" name="new-client" type="text">
+  <input id='categoryId' name='categoryId' type='hidden' value='@Model["stylist"].GetId()'>
   <button type="submit">Add Client!</button>
 </form>

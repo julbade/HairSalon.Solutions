@@ -30,12 +30,29 @@ public class StylistController : Controller
       return RedirectToAction("Index");
   }
 
-  [HttpGet("/stylists/{id}")]
+  [HttpGet("/categories/{id}")]
   public ActionResult Details(int id)
   {
-     Stylist stylist = Stylist.Find(id);
-     return View(stylist);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Stylist selectedStylist = Stylist.Find(id);
+      List<Client> stylistClients = selectedStylist.GetClients();
+      model.Add("stylist", selectedStylist);
+      model.Add("client", stylistClients);
+      return View(model);
   }
+
+  [HttpPost("/clients")]
+  public ActionResult CreateClient(int stylistId, string clientName)
+  {
+     Dictionary<string, object> model = new Dictionary<string, object>();
+     Stylist foundStylist = Stylist.Find(stylistId);
+     Client newClient = new Client(clientName, stylistId);
+
+     List<Client> stylistClients = foundStylist.GetClients();
+     model.Add("clients", stylistClients);
+     model.Add("stylist", foundStylist);
+     return View("Details", model);
+   }
 
   [HttpPost("/stylists/delete")]
   public ActionResult DeleteAll()
