@@ -44,5 +44,6 @@ public class StylistController : Controller
     Stylist.DeleteAll();
     return View();
   }
+
  }
 }
