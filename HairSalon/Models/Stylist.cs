@@ -1,62 +1,62 @@
 using System;
 using System.Collections.Generic;
 using System.Collections;
-using ToDoList;
+using HairSalon;
 using MySql.Data.MySqlClient;
 
-namespace ToDoList.Models
+namespace HairSalon.Models
 {
-  public class Item
+  public class Stylist
   {
     private int _id;
-    private string _description;
+    private string _name;
 
-    public Item(string Description, int Id = 0)
+    public Stylist(string Name, int Id = 0)
     {
       _id = Id;
-      _description = Description;
+      _name = Name;
     }
-    public override bool Equals(System.Object otherItem)
+    public override bool Equals(System.Object otherStylist)
     {
-      if (!(otherItem is Item))
+      if (!(otherStylist is Stylist))
       {
         return false;
       }
       else
       {
-        Item newItem = (Item) otherItem;
-        bool idEquality = (this.GetId() == newItem.GetId());
-        bool descriptionEquality = (this.GetDescription() == newItem.GetDescription());
-        return (idEquality && descriptionEquality);
+        Stylist newStylist = (Stylist) otherStylist;
+        bool idEquality = (this.GetId() == newStylist.GetId());
+        bool nameEquality = (this.GetName() == newStylist.GetName());
+        return (idEquality && nameEquality);
       }
     }
-    public string GetDescription()
+    public string GetName()
     {
-      return _description;
+      return _name;
     }
-    public void SetDescription(string newDescription)
+    public void SetName(string newName)
     {
-      _description = newDescription;
+      _name = newName;
     }
     public int GetId()
     {
       return _id;
     }
 
-    public static List<Item> GetAll()
+    public static List<Stylist> GetAll()
     {
-      List<Item> allItems = new List<Item> {};
+      List<Stylist> allStylists = new List<Stylist> {};
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM items;";
+      cmd.CommandText = @"SELECT * FROM stylists;";
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
-        int itemId = rdr.GetInt32(0);
-        string itemDescription = rdr.GetString(1);
-        Item newItem = new Item(itemDescription, itemId);
-        allItems.Add(newItem);
+        int stylistId = rdr.GetInt32(0);
+        string stylistName = rdr.GetString(1);
+        Stylist newStylist = new Stylist(stylistName, stylistId);
+        allStylists.Add(newStylist);
       }
 
         conn.Close();
@@ -64,7 +64,7 @@ namespace ToDoList.Models
         {
         conn.Dispose();
         }
-      return allItems;
+      return allStylists;
     }
 
     public void Save()
@@ -73,12 +73,12 @@ namespace ToDoList.Models
       conn.Open();
 
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO items (description) VALUES (@ItemDescription);";
+      cmd.CommandText = @"INSERT INTO stylists (name) VALUES (@StylistName);";
 
-      MySqlParameter description = new MySqlParameter();
-      description.ParameterName = "@ItemDescription";
-      description.Value = this._description;
-      cmd.Parameters.Add(description);
+      MySqlParameter name = new MySqlParameter();
+      name.ParameterName = "@StylistName";
+      name.Value = this._name;
+      cmd.Parameters.Add(name);
       // // more logic will go here
       //
       cmd.ExecuteNonQuery();
@@ -97,7 +97,7 @@ namespace ToDoList.Models
       conn.Open();
 
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"TRUNCATE TABLE items;";
+      cmd.CommandText = @"TRUNCATE TABLE stylists;";
 
       cmd.ExecuteNonQuery();
 
@@ -107,28 +107,28 @@ namespace ToDoList.Models
         conn.Dispose();
       }
     }
-    public static Item Find(int id)
+    public static Stylist Find(int id)
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
 
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT * FROM `items` WHERE id = @thisId;";
+      cmd.CommandText = @"SELECT * FROM `stylists` WHERE id = @thisId;";
 
       MySqlParameter thisId = new MySqlParameter();
       thisId.ParameterName = "@thisId";
       thisId.Value = id;
       cmd.Parameters.Add(thisId);
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
-      int itemId = 0;
-      string itemDescription = "";
+      int stylistId = 0;
+      string stylistName = "";
 
       while (rdr.Read())
       {
-        itemId = rdr.GetInt32(0);
-        itemDescription = rdr.GetString(1);
+        stylistId = rdr.GetInt32(0);
+        stylistName = rdr.GetString(1);
       }
-      Item foundItem = new Item(itemDescription, itemId);
+      Stylist foundStylist = new Stylist(stylistName, stylistId);
 
 
       conn.Close();
@@ -136,27 +136,27 @@ namespace ToDoList.Models
       {
         conn.Dispose();
       }
-      return foundItem;
+      return foundStylist;
     }
-    public void Edit(string newDescription)
+    public void Edit(string newName)
     {
       MySqlConnection conn = DB.Connection();
            conn.Open();
            var cmd = conn.CreateCommand() as MySqlCommand;
-           cmd.CommandText = @"UPDATE items SET description = @newDescription WHERE id = @searchId;";
+           cmd.CommandText = @"UPDATE stylists SET name = @newName WHERE id = @searchId;";
 
            MySqlParameter searchId = new MySqlParameter();
            searchId.ParameterName = "@searchId";
            searchId.Value = _id;
            cmd.Parameters.Add(searchId);
 
-           MySqlParameter description = new MySqlParameter();
-           description.ParameterName = "@newDescription";
-           description.Value = newDescription;
-           cmd.Parameters.Add(description);
+           MySqlParameter name = new MySqlParameter();
+           name.ParameterName = "@newName";
+           name.Value = newName;
+           cmd.Parameters.Add(name);
 
            cmd.ExecuteNonQuery();
-           _description = newDescription;
+           _name = newName;
 
            conn.Close();
            if (conn != null)

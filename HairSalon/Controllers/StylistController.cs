@@ -1,47 +1,47 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using HairSalon.Models;
 
-namespace ToDoList.Controllers
+namespace HairSalon.Controllers
 {
-public class ItemsController : Controller
+public class StylistController : Controller
 {
 
-  [HttpGet("/items")]
+  [HttpGet("/stylists")]
   public ActionResult Index()
   {
-    List<Item> allItems = Item.GetAll();
-    return View(allItems);
+    List<Stylist> allStylists = Stylist.GetAll();
+    return View(allStylists);
   }
 
-  [HttpGet("/items/new")]
+  [HttpGet("/stylists/new")]
   public ActionResult CreateForm()
   {
       return View();
   }
 
-  [HttpPost("/items")]
+  [HttpPost("/stylists")]
   public ActionResult Create()
   {
-      Item newItem = new Item(Request.Form["new-item"]);
-      newItem.Save();
-      List<Item> allItems = Item.GetAll();
-      return View("Index", allItems);
+      Stylist newStylist = new Stylist(Request.Form["new-stylist"]);
+      newStylist.Save();
+      List<Stylist> allStylists = Stylist.GetAll();
+      return RedirectToAction("Index");
   }
 
-  [HttpGet("/items/{id}")]
+  [HttpGet("/stylists/{id}")]
   public ActionResult Details(int id)
   {
-     Item item = Item.Find(id);
-     return View(item);
+     Stylist stylist = Stylist.Find(id);
+     return View(stylist);
   }
 
-  [HttpPost("/items/delete")]
+  [HttpPost("/stylists/delete")]
   public ActionResult DeleteAll()
   {
 
-    Item.DeleteAll();
+    Stylist.DeleteAll();
     return View();
   }
  }

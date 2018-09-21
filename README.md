@@ -19,7 +19,7 @@
 
 ## Setup/Installation Requirements
 
-1. Clone this repository at
+1. Clone this repository at https://github.com/julbade/HairSalon.Solutions
 2. Go to folder directory HairSalon.Solution/HairSalon
 3. Open MAMP and start servers
 4. Go to MySQL from terminal

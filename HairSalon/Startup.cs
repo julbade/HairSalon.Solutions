@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ToDoList
+namespace HairSalon
 {
     public class Startup
     {
@@ -32,6 +32,8 @@ namespace ToDoList
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseStaticFiles();
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
@@ -40,7 +42,7 @@ namespace ToDoList
       }
         public static class DBConfiguration
          {
-             public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=todo;";
+             public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=julius_bade;";
          }
 
 }
