@@ -26,28 +26,16 @@ namespace HairSalon.Controllers
       return View(client);
     }
 
-    // [HttpGet("/{id}/clients")]
-    // public ActionResult Index()
-    // {
-    //   List<Client> allClients = Client.GetAll();
-    //   return View(allClients);
-    // }
-
-    // [HttpGet("/{id}/clients/new")]
-    // public ActionResult CreateForm()
-    // {
-    //   return View();
-    // }
-    //
-    // [HttpPost("{id}/clients")]
+    // 
+    // [HttpPost("stylists/{stylistId}/clients")]
     // public ActionResult Create()
     // {
-    //   Client newClient = new Client(Request.Form["new-client"]);
+    //   Client newClient = new Client(Request.Form["new-client"], int.Parse(Request.Form["stylistId"]));
     //   newClient.Save();
     //   List<Client> allClients = Client.GetAll();
     //   return RedirectToAction("Details");
-    }
+    // }
 
 
-
-  }
+ }
+}
