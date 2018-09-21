@@ -1,10 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using HairSalon.Models;
+using HairSalon;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HairSalon.Tests
+namespace HairSalon.Test
 {
   [TestClass]
     public class StylistTests : IDisposable
@@ -78,7 +78,7 @@ namespace HairSalon.Tests
         {
           //Arrange
           string firstName = "Name";
-          Stylist testStylist = new Stylist(firstName, 1);
+          Stylist testStylist = new Stylist(firstName);
           testStylist.Save();
           string secondName = "Last Name";
 

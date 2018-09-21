@@ -19,19 +19,9 @@ form {
   text-shadow: black;
 }
 
-#trollface {
-  height: 420px;
-  width: 400px;
-  float: right;
-}
-#wordcounter {
-  height: 20%;
-  width: 100%;
-}
-
 p, h3 {
    font-family: 'Anton';
-   font-size: 60px;
+   font-size: 20px;
   color: brown;
   text-shadow: black;
 

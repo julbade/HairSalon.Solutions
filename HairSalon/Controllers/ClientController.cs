@@ -26,7 +26,7 @@ namespace HairSalon.Controllers
       return View(client);
     }
 
-    // 
+    //
     // [HttpPost("stylists/{stylistId}/clients")]
     // public ActionResult Create()
     // {
