@@ -1,0 +1,17 @@
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/bin/Debug/netcoreapp1.0.4/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/bin/Debug/netcoreapp1.0.4/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/bin/Debug/netcoreapp1.0.4/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/bin/Debug/netcoreapp1.0.4/ToDoList.Tests.deps.json
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/bin/Debug/netcoreapp1.0.4/ToDoList.Tests.runtimeconfig.json
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/bin/Debug/netcoreapp1.0.4/ToDoList.Tests.runtimeconfig.dev.json
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/bin/Debug/netcoreapp1.0.4/ToDoList.Tests.dll
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/bin/Debug/netcoreapp1.0.4/ToDoList.Tests.pdb
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/bin/Debug/netcoreapp1.0.4/ToDoList.dll
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/bin/Debug/netcoreapp1.0.4/ToDoList.pdb
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/obj/Debug/netcoreapp1.0.4/ToDoList.Tests.csprojAssemblyReference.cache
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/obj/Debug/netcoreapp1.0.4/ToDoList.Tests.csproj.CoreCompileInputs.cache
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/obj/Debug/netcoreapp1.0.4/ToDoList.Tests.AssemblyInfoInputs.cache
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/obj/Debug/netcoreapp1.0.4/ToDoList.Tests.AssemblyInfo.cs
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/obj/Debug/netcoreapp1.0.4/ToDoList.Tests.csproj.CopyComplete
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/obj/Debug/netcoreapp1.0.4/ToDoList.Tests.dll
+/Users/juliusbade/Desktop/ToDoList-Mvc/ToDoList.Tests/obj/Debug/netcoreapp1.0.4/ToDoList.Tests.pdb
