@@ -5,7 +5,7 @@ using HairSalon.Models;
 
 namespace HairSalon.Controllers
 {
-  public class ClientController : Controllers
+  public class ClientController : Controller
   {
     [HttpGet("/clients")]
     public ActionResult Index()
@@ -21,12 +21,13 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost("/clients")]
-    public ActionResult Creat()
+    public ActionResult Create()
     {
-      Client newClient = new Client(Request.Form["new-client"], Request.Form["stylist-id"]);
+      Client newClient = new Client(Request.Form["new-client"]);
       newClient.Save();
       List<Client> allClients = Client.GetAll();
       return RedirectToAction("Index");
     }
+
   }
 }
