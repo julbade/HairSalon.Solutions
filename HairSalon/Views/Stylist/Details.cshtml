@@ -3,9 +3,9 @@ Layout = "_Layout";
 }
 <h3>Here are all the clients for you:</h3>
 <ol>
-@foreach (var item in @Model["client"])
+@foreach (var client in @Model["client"])
 {
-  <li><a href='/stylists/@Model["stylist"].GetId()/clients/@item.GetId()'>@item.GetName()</a></li>
+  <li>@client.GetClientName()</li>
 }
 </ol>
 

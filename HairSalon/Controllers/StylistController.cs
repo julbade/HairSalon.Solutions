@@ -41,17 +41,17 @@ public class StylistController : Controller
       return View(model);
   }
 
-  [HttpPost("/clients")]
-  public ActionResult CreateClient(int stylistId, string clientName)
+  [HttpPost("/stylists/{id}")]
+  public ActionResult CreateClient(string clientName, int stylistId)
   {
      Dictionary<string, object> model = new Dictionary<string, object>();
      Stylist foundStylist = Stylist.Find(stylistId);
-     Client newClient = new Client(clientName, stylistId);
-
+     Client newClient = new Client(Request.Form["new-client"], stylistId);
+     newClient.Save();
      List<Client> stylistClients = foundStylist.GetClients();
-     model.Add("clients", stylistClients);
+     model.Add("client", stylistClients);
      model.Add("stylist", foundStylist);
-     return View("Details", model);
+     return RedirectToAction("Details");
    }
 
   [HttpPost("/stylists/delete")]
