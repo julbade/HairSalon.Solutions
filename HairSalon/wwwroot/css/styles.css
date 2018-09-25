@@ -12,16 +12,11 @@ h2 {
   text-shadow: black;
   text-align: center;
 }
-form {
-  font-size: 'Autour One';
-  font-size: 40px;
-  color: skyblue;
-  text-shadow: black;
-}
+
 
 p, h3 {
    font-family: 'Anton';
-   font-size: 20px;
+   font-size: 40px;
   color: brown;
   text-shadow: black;
 
@@ -29,7 +24,7 @@ p, h3 {
 
 .navbar {
     overflow: hidden;
-    background-color: blue;
+    background-color: green;
     font-family: 'Autour One';
     font-size: 20px
 }
@@ -44,7 +39,7 @@ p, h3 {
 }
 
 .navbar a:hover {
-    background-color: red;
+    background-color: yellow;
 }
 body {
   background: #e6e6e6;

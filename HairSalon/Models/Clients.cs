@@ -24,7 +24,7 @@ namespace HairSalon.Models
     {
       return _name;
     }
-  
+
 
     public int GetClientId()
     {
@@ -147,6 +147,23 @@ namespace HairSalon.Models
         }
         return foundClient;
     }
+
+        public static void DeleteAll()
+        {
+          MySqlConnection conn = DB.Connection();
+          conn.Open();
+
+          var cmd = conn.CreateCommand() as MySqlCommand;
+          cmd.CommandText = @"TRUNCATE TABLE clients";
+
+          cmd.ExecuteNonQuery();
+
+          conn.Close();
+          if (conn != null)
+          {
+            conn.Dispose();
+          }
+        }
 
   }
 }
