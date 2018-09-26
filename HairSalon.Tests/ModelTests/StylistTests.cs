@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using HairSalon;
+using HairSalon.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HairSalon.Test
@@ -73,7 +73,7 @@ namespace HairSalon.Test
           Assert.AreEqual(testId, result);
         }
 
-    
+
 
   }
 }
