@@ -31,7 +31,7 @@ USE `julius_bade`;
 CREATE TABLE `clients` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `stylistId` int(11) NOT NULL
+  `stylist_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
